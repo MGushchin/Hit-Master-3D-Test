@@ -55,9 +55,8 @@ public class EnemySpot : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Player>() != null)
         {
-            if (EnemyCount > 0) //Если на сцене есть противники останавливаем игрока и помечаем зону как находящуюся в бою
+            if (EnemyCount > 0) //Если на сцене есть противники помечаем зону как находящуюся в бою
             {
-                other.gameObject.GetComponent<Player>().Stop();// Переписать
                 inCombat = true;
             }
             else
