@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         StateChanger.SetState(State.Idle);
     }
 
-    public void AreaCleared(EnemySpot completedPoint) //Метод подписывается на прохождение текущей не пройденной локации и при срабатывании продолжает путь
+    public void AreaCleared(EnemySpot completedPoint) //Метод подписывается на событие прохождение текущей не пройденной локации и при срабатывании продолжает путь
     {
         completedPoint.OnCompleted.RemoveListener(AreaCleared);
         movingCoroutine = moving();
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator moving()
     {
-        if (movePoints.Count > 0) //Двигаемся только если очередь точек прохождения не пуст
+        if (movePoints.Count > 0) //Двигаемся только если очередь точек прохождения не пуста
         {
             Agent.SetDestination(movePoints.Peek());
             StateChanger.SetState(State.Run);

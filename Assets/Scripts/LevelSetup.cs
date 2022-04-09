@@ -12,7 +12,7 @@ public class LevelSetup : MonoBehaviour
     {
         for (int i = 1; i < Movepoints.Count - 1; i++) //Передача объектов врага всем областям кроме первой и последней
         {
-            int enemyCount = Random.Range(1, 4);
+            int enemyCount = Random.Range(1, 4); //Генерируем случайное количество противников от 1 до 3
             for (int j = 0; j < enemyCount; j++)
                 Movepoints[i].SetEnemy(Factory.GetEnemy(EnemyLife));
         }

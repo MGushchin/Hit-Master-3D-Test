@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
 
     private void Awake()
     {
-        ownTransform = gameObject.GetComponent<Transform>(); //Кешируем собственный трансформ
+        ownTransform = gameObject.GetComponent<Transform>(); //Кеширование собственной transform
     }
 
     private void FixedUpdate()

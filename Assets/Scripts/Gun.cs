@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
 
     private void Start()
     {
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 10; i++) //Подготовка пулу снарядов
         {
             GameObject bullet = Instantiate(BulletPrefab);
             bullets.Enqueue(bullet.GetComponent<Projectile>());
