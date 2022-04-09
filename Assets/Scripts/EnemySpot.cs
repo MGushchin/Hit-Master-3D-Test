@@ -7,6 +7,7 @@ public class EnemySpot : MonoBehaviour
 {
     public List<Vector3> EnemyLocalPositions = new List<Vector3>(); //ѕозиции относительно нулевой позиции
     public UnityEvent<EnemySpot> OnCompleted = new UnityEvent<EnemySpot>(); //Ёвент при прохождении этапа
+    [SerializeField]
     private List<Vector3> emptyPositions = new List<Vector3>(); //—вободные позиции дл€ размещени€ врагов
     private Dictionary<Enemy, Vector3> occupiedPlaces = new Dictionary<Enemy, Vector3>(); //ѕозиции зан€тые врагами
     public int EnemyCount => aliveEnemies;
@@ -22,9 +23,9 @@ public class EnemySpot : MonoBehaviour
     public void SetEnemy(GameObject enemy)
     {
         Vector3 randomPosition = emptyPositions[Random.Range(0, emptyPositions.Count)];
-        enemy.transform.position = randomPosition;
-        enemy.transform.LookAt(transform.position);
         Enemy currentEnemy = enemy.GetComponent<Enemy>();
+        currentEnemy.Agent.Warp(randomPosition);
+        currentEnemy.transform.LookAt(transform.position);
         currentEnemy.OnDead.AddListener(EnemyDeath);
         occupiedPlaces.Add(currentEnemy, randomPosition);
         emptyPositions.Remove(randomPosition);

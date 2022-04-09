@@ -2722,6 +2722,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  Agent: {fileID: 739265285942648490}
   maximumLife: 0
 --- !u!136 &6077903810621593717
 CapsuleCollider:

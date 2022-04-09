@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public RagdollState Ragdoll;
     public UnityEvent<Enemy> OnDead = new UnityEvent<Enemy>();
     public UnityEvent<float, float> OnHealthChanged = new UnityEvent<float, float>();
+    public UnityEngine.AI.NavMeshAgent Agent;
     [SerializeField]
     private float maximumLife;
     public float MaximumLife => maximumLife;
